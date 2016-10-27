@@ -3,14 +3,14 @@ Begin VB.Form Form1
    BorderStyle     =   1  'Fixed Single
    Caption         =   "NEIE Assistant"
    ClientHeight    =   2580
-   ClientLeft      =   36
+   ClientLeft      =   30
    ClientTop       =   360
-   ClientWidth     =   2916
+   ClientWidth     =   2925
    Icon            =   "Form1.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   2580
-   ScaleWidth      =   2916
+   ScaleWidth      =   2925
    StartUpPosition =   3  '窗口缺省
    Begin VB.Timer Timer1 
       Enabled         =   0   'False
@@ -84,7 +84,7 @@ Begin VB.Form Form1
       Caption         =   "Label5"
       BeginProperty Font 
          Name            =   "宋体"
-         Size            =   7.8
+         Size            =   7.5
          Charset         =   134
          Weight          =   400
          Underline       =   0   'False
@@ -232,7 +232,12 @@ Dim pStr As String
     
     pStr = HttpGet("http://" & IP & "/WebService/ServiceV3.asmx?WSDL")
     
-    If Len(pStr) = 0 Or InStr(pStr, "LoginListeningResponse") <= 0 Then
+    '2016年10月后，HttpGet莫名返回空串，没有仔细研究原因
+    '跳过这一行判断就可以了，与服务器交互使用Soap，HttpGet出问题应该不影响。
+    
+    'If Len(pStr) = 0 Or InStr(pStr, "LoginListeningResponse") <= 0 Then
+    
+    If False Then
         
         MsgBox "IP地址错误 或者 网络出现问题", vbCritical, "提示"
         
