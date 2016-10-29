@@ -24,7 +24,7 @@ Begin VB.Form Form1
       Left            =   240
       TabIndex        =   9
       Top             =   2160
-      Width           =   972
+      Width           =   1215
    End
    Begin VB.TextBox Text4 
       Height          =   264
@@ -65,10 +65,10 @@ Begin VB.Form Form1
    Begin VB.CommandButton Command1 
       Caption         =   "¿ªÊ¼"
       Height          =   384
-      Left            =   1800
+      Left            =   1560
       TabIndex        =   0
       Top             =   2160
-      Width           =   972
+      Width           =   1215
    End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
